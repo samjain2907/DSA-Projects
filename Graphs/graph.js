@@ -115,9 +115,14 @@ function createGraph(V, E) {
       vis[mn] = 1;
       for(let j=0;j<graph[mn].length; i++) {
         let edge = graph[mn][j];
-        if(vis[edge[0] === 0 && dist[]])
+        if(vis[edge[0] === 0 && dist[0][0] > dist[mn][0] + edge[1]]) {
+          dist[0][0] = dist[mn][0] + edge[1];
+          dist[edge[0][1]] = mn;
+        }
       }
     }
+
+    return dist;
   
   }
   
