@@ -95,11 +95,35 @@ function createGraph(V, E) {
   //Implementation of Djikstra's algorithm
   
   function Djikstra(graph, V, src)  {
+    let vis = Array(V).fill(0);
+    let dist = [];
+    for(let i=0; i<V; i++) {
+      dist.push([1000, -1]);
+    }
+
+    dist[src] = 0;
+    for(let i=0; i<V-1; i++) {
+      let mn = -1;
+      for(let j=0; j<V; j++) {
+        if(vis[j]===0) {
+          if(mn== -1 || dist[j][0] < dist[mn][0]) {
+            mn = j;
+          }
+        }
+      }
+
+      vis[mn] = 1;
+      for(let j=0;j<graph[mn].length; i++) {
+        let edge = graph[mn][j];
+        if(vis[edge[0] === 0 && dist[]])
+      }
+    }
   
   }
   
   let V = 9;
   let src = 0;
-  
+  let E = [[0,1,4], [0,7,8], [1,7,11],[1,2,8], [7,8,7], [6,7,1], [2,8,2], [6,8,6],
+[5,6,2], [2,5,4], [2,3,7], [3,5,14], [3,4,9], [4,5,10]];
   
   let graph = createGraph(V, E);
