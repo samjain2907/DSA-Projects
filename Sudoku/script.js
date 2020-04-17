@@ -58,6 +58,7 @@ function changeBoard(board) {
     }
   }
 }
+// Request to the API
 
 button.onclick = function() {
   var xhrRequest = new XMLHttpRequest();
@@ -72,11 +73,11 @@ button.onclick = function() {
     setColor(temp);
     changeBoard(board);
   };
-  xhrRequest.open("get", "https://sugoku.herokuapp.com/board?difficulty=easy");
+  xhrRequest.open("get", "https://sugoku.herokuapp.com/board?difficulty=hard");
 
   xhrRequest.send();
 };
-
+//If the value is 0 at that position
 function isPossible(board, sr, sc, val) {
   for (var row = 0; row < 9; row++) {
     if (board[row][sc] == val) {
@@ -122,6 +123,7 @@ function solveSudokuHelper(board, sr, sc) {
     if (isPossible(board, sr, sc, i)) {
       board[sr][sc] = i;
       solveSudokuHelper(board, sr, sc + 1);
+      //Backtraking move
       board[sr][sc] = 0;
     }
   }
@@ -130,3 +132,7 @@ function solveSudokuHelper(board, sr, sc) {
 function solveSudoku(board) {
   solveSudokuHelper(board, 0, 0);
 }
+
+solve.onclick = function() {
+  solveSudoku(board);
+};
