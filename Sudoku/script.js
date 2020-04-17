@@ -74,7 +74,7 @@ button.onclick = function() {
     changeBoard(board);
   };
   xhrRequest.open("get", "https://sugoku.herokuapp.com/board?difficulty=hard");
-
+  // The difficulty can be changed by changing the difficulty tag by easy, medium or hard
   xhrRequest.send();
 };
 //If the value is 0 at that position
