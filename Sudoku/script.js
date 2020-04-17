@@ -7,17 +7,17 @@ for (var i = 0; i < 9; i++) {
   }
 }
 
-function intializeTemp(temp) {
+function initializeTemp(temp) {
   for (var i = 0; i < 9; i++) {
-    for (j = 0; j < 9; j++) {
+    for (var j = 0; j < 9; j++) {
       temp[i][j] = false;
     }
   }
 }
 
 function setTemp(board, temp) {
-  for (i = 0; i < 9; i++) {
-    for (j = 0; j < 9; j++) {
+  for (var i = 0; i < 9; i++) {
+    for (var j = 0; j < 9; j++) {
       if (board[i][j] != 0) {
         temp[i][j] = true;
       }
@@ -49,7 +49,6 @@ let button = document.getElementById("generate-sudoku");
 let solve = document.getElementById("solve");
 
 console.log(arr);
-
 function changeBoard(board) {
   for (var i = 0; i < 9; i++) {
     for (var j = 0; j < 9; j++) {
@@ -74,7 +73,7 @@ button.onclick = function() {
     changeBoard(board);
   };
   xhrRequest.open("get", "https://sugoku.herokuapp.com/board?difficulty=easy");
-  //we can change the difficulty of the puzzle the allowed values of difficulty are easy, medium, hard and random
+
   xhrRequest.send();
 };
 
@@ -129,9 +128,5 @@ function solveSudokuHelper(board, sr, sc) {
 }
 
 function solveSudoku(board) {
-  solvesudokuHelper(board, 0, 0);
+  solveSudokuHelper(board, 0, 0);
 }
-
-solve.onclick = function() {
-  solveSudoku(board);
-};
