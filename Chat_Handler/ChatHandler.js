@@ -23,5 +23,12 @@ class ChatHandler {
   }
   createNode(id) {
     //creating node element
+    let node = {};
+    //We will implement a doubly linked list with reference to prev and next node.
+    node["next"] = null;
+    node["prev"] = null;
+    let chat_item = this.chat_template.cloneNode(true);
+    chat_item.querySelector("#Name").innerText =
+      chat_names[id % chat_names_length];
   }
 }
