@@ -36,7 +36,7 @@ class ChatHandler {
   }
 
   getTime() {
-    //Time stamp creation for chat_tmeplate
+    //Time stamp creation for chat_template
     this.mins += 1;
     if (this.min === 60) {
       this.hours += 1;
@@ -50,7 +50,7 @@ class ChatHandler {
   createNode(id) {
     //creating node element
     let node = {};
-    //We will implement a doubly linked list with reference to prev and next node.
+    //We will implement a doubly linked list with reference to previous and next node.
     node["next"] = null;
     node["prev"] = null;
     let chat_item = this.chat_template.cloneNode(true);
