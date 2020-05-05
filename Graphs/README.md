@@ -6,3 +6,7 @@
 
 - The visual effect is created using Vis.js.
 - This project will automatically generate different graphs every time and will calculate the shortest distance between the starting and the ending nodes.
+
+### Screenshot
+
+! [preview](Screenshot.png)
