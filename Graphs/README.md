@@ -9,4 +9,4 @@
 
 ### Screenshot
 
-! [preview](Screenshot.png)
+![Preview](Screenshot.png)
