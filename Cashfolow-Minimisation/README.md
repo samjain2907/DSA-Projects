@@ -11,6 +11,10 @@
 - [Bootstrap4](https://getbootstrap.com/)
 - [Vis.js](https://visjs.org/)
 
+### Screenshot
+
+![Preview](screenshot.png)
+
 ### How does it works:
 
 - The project randomly generates data in form of a graph.
